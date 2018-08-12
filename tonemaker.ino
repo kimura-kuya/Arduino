@@ -13,6 +13,11 @@ void setup() {
 void loop() {
   digitalWrite(controll,HIGH);
   for (int i = 0; i <= soundsize; i++){
+    if  (sound[i] == 0){
+      digitalWrite(controll,LOW);
+    }else{
+      digitalWrite(controll,HIGH);
+    }
     tone(buzzer,sound[i]);
     delay(tonetime[i]);
   }
